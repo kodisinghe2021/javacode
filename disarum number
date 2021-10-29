@@ -1,0 +1,21 @@
+import 'dart:math';
+
+bool cal(int num) {
+  int len = num.toString().length;
+  int numcopy = num;
+  var sum = 0.0;
+  while (num > 0) {
+    sum += pow(num % 10, len);
+    num = num ~/ 10;
+    len--;
+  }
+  return sum == numcopy;
+}
+
+void main() {
+  for (int i = 10; i <= 1000; i++) {
+    if (cal(i)) {
+      print("$i is a dicarium number");
+    }
+  }
+}
